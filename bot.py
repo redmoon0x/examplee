@@ -1,11 +1,11 @@
 from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes
 import os
+from dotenv import load_dotenv
 
+load_dotenv()
 
-
-
-BOT_TOKEN ='7374795855:AAGGanQeaxsgLF81Fsu3rsZP5c0Hbg50wUI'
+BOT_TOKEN = os.getenv('BOT_TOKEN')
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Send a welcome message when the command /start is issued."""
